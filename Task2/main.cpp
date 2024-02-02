@@ -1,14 +1,35 @@
-//
-//  main.cpp
-//  Task2
-//
-//  Created by Кристина Скворцова on 02.02.2024.
-//
-
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+struct bank {
+    std::string name;
+    int number;
+    double balance;
+};
+
+void balanceBank(bank &change, double newBalance) {
+ change.balance = newBalance;
+}
+
+int main(){
+    double newBalance;
+
+    bank change;
+
+    std::cout << "Введите номер счета: ";
+    std::cin >> change.number;
+
+    std::cout << "Введите имя владельца: ";
+    std::cin >> change.name;
+
+    std::cout << "Введите баланс: ";
+    std::cin >> change.balance;
+
+    std::cout << "Введите новый баланс: ";
+    std::cin >> newBalance;
+
+    balanceBank(change, newBalance);
+
+    std::cout << std::endl;
+
+    std::cout << "Ваш счет: " << change.name << ", " << change.number << ", " << change.balance << std::endl;
 }
